@@ -86,6 +86,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .vsec{display:flex;flex-direction:column;gap:12px;padding-top:8px}
 .typedesc{margin:0;color:var(--muted);font-size:13.5px}
 .typedesc b{color:var(--ink);font-weight:600}
+.basis{font-size:12.5px;color:var(--muted)}
 .seg small{font-size:11.5px;opacity:.75}
 .ph{display:inline-block;font-size:10.5px;font-weight:600;color:var(--accent);border:1px solid var(--accent);border-radius:4px;padding:0 4px;line-height:1.5;vertical-align:1px;margin-left:2px}
 .credit{font-size:11.5px;color:var(--muted);line-height:1.5}
@@ -669,7 +670,7 @@ function openDetail(i){
 async function renderFinish(i,type){
   const r=D[i];
   vDetail.querySelectorAll('#seg button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.type===type));
-  $('#typedesc').innerHTML=`<b>${TYPE[type].prod}</b> · ${TYPE[type].desc}`;
+  $('#typedesc').innerHTML=`<b>${TYPE[type].prod}</b> · ${TYPE[type].desc}<br><span class="basis">색 기준: Minwax 공식 견본(레드오크에 칠한 사진)에서 측정한 착색 값을 이 목재 색에 적용한 계산값이에요. 수종별로 실제 칠한 공식 견본은 없어요.</span>`;
   $('#vh').textContent=`${r[1]} · ${TYPE[type].ko} 바니쉬 ${FIN[type].length}색`;
   $('#rgrid').innerHTML=`<div class="tile orig"><canvas class="board" data-f="-1"></canvas><div class="t1"><b>원색상 (무도장)</b><span class="mono" id="oHex"></span></div><div class="en">${r[2]}</div></div>
     ${FIN[type].map((f,j)=>`<div class="tile"><canvas class="board" data-f="${j}"></canvas>
