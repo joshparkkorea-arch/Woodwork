@@ -151,9 +151,66 @@ a.tile .gl{font-size:11px;color:var(--accent);opacity:.85}
 footer{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:14px;display:flex;flex-direction:column;gap:6px}
 .copy{font-size:11.5px;line-height:1.6}
 
+/* quiz */
+#top{display:flex;flex-wrap:wrap;gap:18px 32px;align-items:flex-end;justify-content:space-between}
+#top .tmain{flex:1 1 420px;min-width:0}
+.qentry{flex:0 1 360px;display:grid;grid-template-columns:118px minmax(0,1fr);gap:14px;align-items:center;text-align:left;
+  border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:12px 16px 12px 12px;cursor:pointer}
+.qentry:hover{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.qentry .qprev{position:relative;display:block}
+.qentry .qprev canvas{display:block;width:100%;aspect-ratio:24/11;border-radius:3px;background:var(--chip);box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+.qentry .qprev b{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--f-display);font-size:30px;font-weight:800;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.55)}
+.qentry .qt{display:flex;flex-direction:column;gap:2px;min-width:0}
+.qentry .qt strong{font-family:var(--f-display);font-size:19px;font-weight:800;line-height:1.25}
+.qentry .qt span{font-size:12.5px;color:var(--muted);line-height:1.45}
+.qentry .qt i{font-style:normal;font-size:13px;font-weight:600;color:var(--accent);margin-top:2px}
+.quiz{max-width:760px;width:100%;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+.qprog{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--muted)}
+.qdots{display:flex;gap:5px;flex:1}
+.qdots i{flex:1;height:6px;border-radius:3px;background:var(--line)}
+.qdots i.ok{background:var(--accent)}.qdots i.no{background:var(--warn)}.qdots i.now{background:var(--ink)}
+.qboard{display:block;width:100%;aspect-ratio:24/11;border-radius:4px;background:var(--chip);box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+.qhead{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between}
+.qhint{border:1px solid var(--accent);color:var(--accent);background:none;border-radius:999px;padding:6px 14px;font-size:13.5px;font-weight:600;cursor:pointer}
+.qhint:disabled{opacity:.45;cursor:default}
+.qhints{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+.qhints li{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:9px 12px;font-size:14px}
+.qhints li b{color:var(--accent);font-size:12px;letter-spacing:.04em;margin-right:6px}
+.qopts{display:grid;grid-template-columns:1fr;gap:8px}
+.qopt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:12px 14px;font-size:16px;font-weight:500;cursor:pointer}
+.qopt:hover:not(:disabled){border-color:var(--accent)}
+.qopt .n{flex:none;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:12.5px;font-family:var(--f-mono);background:var(--chip);color:var(--muted)}
+.qopt:disabled{cursor:default}
+.qopt.gone{opacity:.3;text-decoration:line-through}
+.qopt.right{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.qopt.right .n{background:var(--accent);color:var(--accent-ink)}
+.qopt.wrong{border-color:var(--warn);box-shadow:0 0 0 1px var(--warn)}
+.qopt.wrong .n{background:var(--warn);color:#fff}
+.qfb{border-radius:10px;padding:12px 14px;background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;gap:4px;font-size:14px}
+.qfb strong{font-size:16px}
+.qfb.ok strong{color:var(--accent)}.qfb.no strong{color:var(--warn)}
+.qfb .credit{margin-top:2px}
+.qnav{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
+.qbtn{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:9px 20px;font-size:15px;font-weight:600;cursor:pointer}
+.qbtn.pri{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.qres{text-align:center;display:flex;flex-direction:column;gap:6px;align-items:center;padding:12px 0 4px}
+.qres .sc{font-family:var(--f-display);font-size:clamp(54px,12vw,84px);font-weight:800;line-height:1}
+.qres .sc small{font-size:.38em;color:var(--muted);margin-left:4px}
+.qres .tt{font-family:var(--f-display);font-size:clamp(24px,5vw,32px);font-weight:800;color:var(--accent)}
+.qres.low .tt{color:var(--warn)}
+.qres p{margin:0;color:var(--muted);font-size:14px}
+.qlist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.qlist button{width:100%;display:grid;grid-template-columns:84px minmax(0,1fr);gap:10px;align-items:center;text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:8px;cursor:pointer}
+.qlist button:hover{border-color:var(--accent)}
+.qlist canvas{display:block;width:100%;aspect-ratio:24/11;border-radius:3px;background:var(--chip)}
+.qlist .m{display:flex;flex-direction:column;min-width:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.qlist .m b{font-size:14px;color:var(--ink)}
+.qlist .ok{color:var(--accent);font-weight:600}.qlist .no{color:var(--warn);font-weight:600}
+
 @media (max-width:720px){
   .hero{grid-template-columns:1fr}
   .pick{grid-template-columns:1fr}
+  .qentry{flex:1 1 100%}
   .grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}
   .rgrid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
 }
@@ -169,8 +226,14 @@ footer{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padd
   </nav>
   <div class="err" id="err" hidden></div>
   <header id="top">
+    <div class="tmain">
     <h1>목재 100종 견본</h1>
     <p class="lede">목재를 고르면 특징·가격·사용처가 나오고, 아래에서 수성·유성 스테인을 고르면 Minwax 공식 색상 견본에서 측정한 값으로 그 목재에 칠했을 때의 색을 보여줘요. 색 견본을 누르면 실제 시공 사진을 구글 이미지에서 찾아볼 수 있어요.</p>
+    </div>
+    <button type="button" class="qentry" id="qStart" aria-label="나무 이름 맞추기 퀴즈 시작">
+      <span class="qprev"><canvas id="qPrev" width="300" height="138"></canvas><b>?</b></span>
+      <span class="qt"><strong>나무 이름 맞추기 퀴즈</strong><span>무늬만 보고 어떤 나무인지 맞혀보세요 · 10문제 · 5지선다 · 힌트 3개</span><i>시작하기 →</i></span>
+    </button>
   </header>
 
   <section id="vList" class="wrap" style="gap:16px">
@@ -186,6 +249,7 @@ footer{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padd
   </section>
 
   <section id="vDetail" class="wrap" hidden></section>
+  <section id="vQuiz" class="wrap" hidden aria-live="polite"></section>
 
   <details class="note" id="method">
     <summary>색을 계산한 방법과 한계</summary>
@@ -601,7 +665,7 @@ function put(cv,w,h,data){cv.width=w;cv.height=h;cv.getContext('2d').putImageDat
 
 /* ---------- list view ---------- */
 const $=s=>document.querySelector(s);
-const vList=$('#vList'),vDetail=$('#vDetail');
+const vList=$('#vList'),vDetail=$('#vDetail'),vQuiz=$('#vQuiz');
 let query='';
 const F={g:new Set(),lv:new Set(),use:new Set(),ra:new Set()};
 const anyF=()=>F.g.size||F.lv.size||F.use.size||F.ra.size||query;
@@ -687,9 +751,9 @@ $('#grid').addEventListener('click',e=>{const c=e.target.closest('.card');if(c)o
 let listY=0;
 function show(v,toTop){
   if(!vList.hidden&&v!==vList)listY=window.scrollY;
-  [vList,vDetail].forEach(x=>x.hidden=x!==v);
+  [vList,vDetail,vQuiz].forEach(x=>x.hidden=x!==v);
   $('#bar').hidden=v===vList; $('#top').hidden=v!==vList;
-  $('#crumb').textContent=v===vDetail?D[+vDetail.dataset.i][1]:'';
+  $('#crumb').textContent=v===vDetail?D[+vDetail.dataset.i][1]:v===vQuiz?quizCrumb():'';
   window.scrollTo(0,v===vList&&!toTop?listY:0);
 }
 const stars=n=>'★'.repeat(n)+'<span class="off">'+'★'.repeat(5-n)+'</span>';
@@ -761,11 +825,119 @@ async function renderFinish(i,type){
 }
 document.addEventListener('click',e=>{
   const b=e.target.closest('[data-act],[data-type]');if(!b)return;
-  if(b.dataset.act==='home'){show(vList,true);return;}
-  if(b.dataset.act==='back'){show(vList);return;}
+  if(b.dataset.act==='home'){Q.fromRes=false;show(vList,true);return;}
+  if(b.dataset.act==='back'){
+    if(!vQuiz.hidden){quizBack();return;}
+    if(!vDetail.hidden&&Q.fromRes){Q.fromRes=false;quizResult();return;}
+    show(vList);return;}
   if(b.dataset.type){renderFinish(+vDetail.dataset.i,b.dataset.type);}
 });
-window.__wv={base,photoOK,PH};
+
+/* ---------- quiz: guess the species from its grain ---------- */
+const Q={items:[],k:0,view:'q',fromRes:false};
+const QN=10;
+const iga=w=>{const c=w.charCodeAt(w.length-1);return c>=0xAC00&&c<=0xD7A3&&(c-0xAC00)%28?'이에요':'예요';};
+const shuffle=a=>{for(let j=a.length-1;j>0;j--){const r=Math.floor(Math.random()*(j+1));[a[j],a[r]]=[a[r],a[j]];}return a;};
+const pickN=(pool,n,not)=>shuffle(pool.filter(x=>!not.includes(x))).slice(0,n);
+function quizCrumb(){return Q.view==='res'?'나무 맞추기 퀴즈 · 결과':`나무 맞추기 퀴즈 · ${Q.k+1} / ${QN}`;}
+function maskName(t,i){
+  let out=String(t||'');
+  const names=[D[i][1]].concat(String(D[i][2]).split('·').map(x=>x.trim())).filter(x=>x&&x.length>=2);
+  names.sort((a,b)=>b.length-a.length).forEach(n=>{out=out.split(n).join('○○');});
+  return out;
+}
+function quizNew(){
+  const all=D.map((r,i)=>i), ans=shuffle(all.slice()).slice(0,QN);
+  Q.items=ans.map(i=>{
+    const same=all.filter(j=>D[j][0]===D[i][0]&&j!==i);
+    const d=pickN(same,2,[i]); d.push(...pickN(all,4-d.length,[i,...d]));
+    return {i,opts:shuffle([i,...d]),pick:null,hints:0,gone:[]};
+  });
+  Q.k=0;Q.view='q';Q.fromRes=false;
+  quizShow(0);
+}
+function quizBoard(cv,i,R,big){
+  base(i,R,big).then(raw=>{if(cv.isConnected&&+cv.dataset.i===i)put(cv,raw.w,raw.h,raw.d.slice());});
+}
+function hintText(n,i){
+  const r=D[i];
+  if(n===1)return `분류 <b>${G[r[0]]}</b> · 가공 난이도 ${'★'.repeat(r[3])} · 희귀도 ${RAN[RA[i]]}`;
+  if(n===2)return `색은 <b>${esc(maskName(r[5],i))}</b>, 주로 ${esc(maskName(useOf(i)||'-',i))}에 써요`;
+  return `${esc(maskName(r[6],i))} · 영문 이름 첫 글자 <b>${esc(woodEn(i).charAt(0).toUpperCase())}</b> · 오답 2개를 지웠어요`;
+}
+function quizShow(k){
+  Q.k=k;Q.view='q';
+  const it=Q.items[k],i=it.i,done=it.pick!==null,ok=it.pick===i;
+  const dots=Q.items.map((x,j)=>`<i class="${j===k?'now':x.pick===null?'':x.pick===x.i?'ok':'no'}"></i>`).join('');
+  const HL=['','1차','2차','3차'];
+  let fb='';
+  if(done){
+    const p=PH[i];
+    const cr=photoOK[i+'b']&&p?`<span class="credit">사진: ${esc(p.sp)}${p.rel?' (근연종)':''} · ${esc(p.art)} · ${esc(p.lic)} · <a href="${p.page}" target="_blank" rel="noopener">Wikimedia Commons</a></span>`:'<span class="credit">이 무늬는 일러스트예요.</span>';
+    fb=`<div class="qfb ${ok?'ok':'no'}"><strong>${ok?'정답이에요! 🎉':'아쉬워요. 정답은 '+esc(D[i][1])+iga(D[i][1])}</strong><span><b>${esc(D[i][1])}</b> · ${esc(D[i][2])} — ${esc(D[i][6])}</span>${cr}</div>`;
+  }
+  vQuiz.innerHTML=`<div class="quiz">
+    <div class="qprog"><span class="mono">${k+1} / ${QN}</span><div class="qdots" aria-hidden="true">${dots}</div></div>
+    <canvas class="qboard" id="qBoard" data-i="${i}" role="img" aria-label="${k+1}번 문제 나무 무늬"></canvas>
+    <div class="qhead"><h2>이 무늬는 어떤 나무일까요?</h2>
+      <button type="button" class="qhint" id="qHint" ${done||it.hints>=3?'disabled':''}>힌트 보기 (${it.hints}/3)</button></div>
+    ${it.hints?`<ul class="qhints">${[1,2,3].slice(0,it.hints).map(n=>`<li><b>${HL[n]} 힌트</b>${hintText(n,i)}</li>`).join('')}</ul>`:''}
+    <div class="qopts">${it.opts.map((o,j)=>{
+      const cls=done?(o===i?' right':o===it.pick?' wrong':''):(it.gone.includes(o)?' gone':'');
+      return `<button type="button" class="qopt${cls}" data-o="${o}" ${done||it.gone.includes(o)?'disabled':''}><span class="n">${j+1}</span>${esc(D[o][1])}</button>`;}).join('')}</div>
+    ${fb}
+    <div class="qnav">${done?`<button type="button" class="qbtn pri" id="qNext">${k<QN-1?'다음 문제 →':'결과 보기 →'}</button>`:''}</div>
+  </div>`;
+  show(vQuiz,true);
+  quizBoard($('#qBoard'),i,2.5,true);
+  if(Q.items[k+1])base(Q.items[k+1].i,2.5,true);
+}
+function quizAnswer(o){
+  const it=Q.items[Q.k];if(it.pick!==null)return;
+  it.pick=o;quizShow(Q.k);
+  const n=$('#qNext');if(n)n.focus({preventScroll:true});
+}
+function quizNext(){
+  if(Q.k<QN-1){const nx=Q.items[Q.k+1];quizShow(Q.k+1);if(nx.pick===null)return;}
+  else quizResult();
+}
+function quizBack(){
+  if(Q.view==='res'){quizShow(QN-1);return;}
+  if(Q.k>0){quizShow(Q.k-1);return;}
+  show(vList);
+}
+function quizResult(){
+  Q.view='res';
+  const right=Q.items.filter(x=>x.pick===x.i).length, score=right*10, hints=Q.items.reduce((a,x)=>a+x.hints,0);
+  const title=score===100?'목재 마스터':score>=90?'목재 초고수':score>=80?'목재 고수':score>=60?'목재 중수':score>=40?'목재 초보':'공부가 더 필요합니다';
+  const msg=score===100?'모든 나무를 알아봤어요. 완벽해요!':score>=40?'틀린 나무를 눌러서 특징을 다시 살펴보세요.':'아래 나무들을 눌러서 무늬와 특징을 다시 살펴보세요.';
+  vQuiz.innerHTML=`<div class="quiz">
+    <div class="qres${score<40?' low':''}"><span class="label">나무 맞추기 퀴즈 결과</span>
+      <div class="sc mono">${score}<small>점</small></div>
+      <div class="tt">${title}</div>
+      <p>${QN}문제 중 ${right}문제 정답 · 힌트 ${hints}번 사용</p><p>${msg}</p></div>
+    <ul class="qlist">${Q.items.map((x,j)=>`<li><button type="button" data-qi="${x.i}"><canvas data-i="${x.i}" width="300" height="138"></canvas>
+      <span class="m"><span>${j+1}번 · ${x.pick===x.i?'<span class="ok">정답</span>':'<span class="no">오답</span>'}</span><b>${esc(D[x.i][1])}</b>${x.pick===x.i?'':`<span>내 답: ${esc(D[x.pick][1])}</span>`}</span></button></li>`).join('')}</ul>
+    <div class="qnav"><button type="button" class="qbtn" data-act="home">⌂ 홈으로</button><button type="button" class="qbtn pri" id="qAgain">다시 풀기 (새 10문제)</button></div>
+  </div>`;
+  show(vQuiz,true);
+  vQuiz.querySelectorAll('.qlist canvas').forEach(cv=>quizBoard(cv,+cv.dataset.i,1.25,false));
+}
+vQuiz.addEventListener('click',e=>{
+  const o=e.target.closest('.qopt');if(o&&!o.disabled){quizAnswer(+o.dataset.o);return;}
+  if(e.target.closest('#qHint')){const it=Q.items[Q.k];if(it.pick!==null||it.hints>=3)return;it.hints++;
+    if(it.hints===3)it.gone=pickN(it.opts,2,[it.i]);quizShow(Q.k);return;}
+  if(e.target.closest('#qNext')){quizNext();return;}
+  if(e.target.closest('#qAgain')){quizNew();return;}
+  const li=e.target.closest('[data-qi]');if(li){Q.fromRes=true;openDetail(+li.dataset.qi);}
+});
+document.addEventListener('keydown',e=>{
+  if(vQuiz.hidden||Q.view!=='q'||e.altKey||e.ctrlKey||e.metaKey)return;
+  if(/^[1-5]$/.test(e.key)){const b=vQuiz.querySelectorAll('.qopt')[+e.key-1];if(b&&!b.disabled){e.preventDefault();quizAnswer(+b.dataset.o);}}
+});
+$('#qStart').addEventListener('click',quizNew);
+(()=>{const cv=$('#qPrev'),i=Math.floor(Math.random()*D.length);cv.dataset.i=i;quizBoard(cv,i,1.25,false);})();
+window.__wv={base,photoOK,PH,Q};
 chipsHTML();renderList();
 $('#ccount').textContent=Object.keys(PH).length;
 $('#credits').innerHTML=Object.keys(PH).map(Number).sort((a,b)=>a-b).map(i=>{const p=PH[i];return `<li><b>${esc(D[i][1])}</b> · ${esc(p.sp)}${p.rel?' (근연종)':''}<br>${esc(p.art)} · ${esc(p.lic)} · <a href="${p.page}" target="_blank" rel="noopener">원본</a></li>`;}).join('');
