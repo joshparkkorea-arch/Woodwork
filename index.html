@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <meta name="author" content="박철웅">
 <meta name="copyright" content="© 2026 박철웅">
-<meta name="description" content="목재 100종의 실사 사진·특징·장단점·가격·사용처와 Minwax 수성·유성 스테인 색상별 칠한 색을 미리 보는 견본">
+<meta name="description" content="목재 100종의 실사 사진·특징·장단점·가격·사용처·강도·무게와 Minwax 수성·유성 스테인 색상별 칠한 색을 미리 보는 견본">
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>목재 100종 견본</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -61,9 +61,10 @@ button{font:inherit;color:inherit}
 .card .ra{font-size:10.5px;font-weight:600;padding:0 5px;border-radius:4px;line-height:1.6;border:1px solid var(--line);color:var(--muted)}
 .card .ra.r4,.card .ra.r5{color:var(--warn);border-color:var(--warn)}
 .card .ra.r1{display:none}
-.card .pp{font-size:10.5px;color:var(--muted);letter-spacing:.02em;line-height:1.3}
-.sgb,.mgb{letter-spacing:1px;font-size:9px}.sgb{color:#8A6A3C}.mgb{color:#3E6E8C}.sgb .off,.mgb .off{color:var(--line)}
-.sgb.big,.mgb.big{font-size:12px;letter-spacing:2px}
+.card .pp{font-size:10.5px;color:var(--muted);letter-spacing:.02em;line-height:1.3;display:flex;flex-wrap:wrap;gap:1px 8px}.card .pp>span{white-space:nowrap}
+.sgb,.mgb,.wgb{letter-spacing:1px;font-size:9px}.sgb{color:#8A6A3C}.mgb{color:#3E6E8C}.wgb{color:#6E5A7E}.sgb .off,.mgb .off,.wgb .off{color:var(--line)}
+.sgb.big,.mgb.big,.wgb.big{font-size:12px;letter-spacing:2px}
+.ptab{border-collapse:collapse;font-size:13px;width:100%;max-width:520px}.ptab th,.ptab td{padding:4px 8px 4px 0;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle}.ptab th{font-weight:600;color:var(--muted);font-size:11.5px}.ptab td.v{white-space:nowrap}.ptab .rb{display:inline-block;width:70px;height:6px;border-radius:3px;background:var(--line);vertical-align:middle;margin-right:6px;overflow:hidden}.ptab .rb i{display:block;height:100%;background:#8A6A3C}.ptab small{color:var(--muted)}
 .rad{color:var(--warn);letter-spacing:2px;font-size:13px}.rad .off{color:var(--line)}
 .rdesc{font-size:11.5px;color:var(--muted)}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
@@ -249,6 +250,7 @@ footer{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padd
       <div class="frow"><span class="flabel">희귀도</span><div class="chips" id="rachips" role="group" aria-label="희귀도"></div></div>
       <div class="frow"><span class="flabel">강도</span><div class="chips" id="sgchips" role="group" aria-label="강도 등급"></div></div>
       <div class="frow"><span class="flabel">내습성</span><div class="chips" id="mgchips" role="group" aria-label="내습성 등급"></div></div>
+      <div class="frow"><span class="flabel">무게</span><div class="chips" id="wgchips" role="group" aria-label="무게 등급"></div></div>
     </div>
     <div class="grid" id="grid"><p class="count" style="grid-column:1/-1">목록을 불러오는 중이에요. 이 문구만 계속 보이면 지금 화면에서 스크립트가 꺼져 있는 거예요. 오른쪽 아래 공유 버튼으로 Safari 같은 브라우저에서 열어보세요.</p></div>
   </section>
@@ -257,7 +259,7 @@ footer{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padd
   <section id="vQuiz" class="wrap" hidden aria-live="polite"></section>
 
   <details class="note" id="method">
-    <summary>색을 계산한 방법과 한계</summary>
+    <summary>색·강도·무게를 정한 방법과 한계</summary>
     <p><b>스테인 색 데이터</b>는 추정값이 아니라 Minwax(셔윈윌리엄스) 공식 사이트에 올라온 색상 견본 이미지를 직접 측정한 값이에요. 견본은 모두 레드오크에 칠한 사진이에요.</p>
     <ul>
       <li><b>유성 25색 (투명 포함)</b>: Minwax Wood Finish 유성 침투형 스테인 견본. 기준은 같은 사진 계열의 Natural 209(투명) 견본.</li>
@@ -269,12 +271,12 @@ footer{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padd
       <li><b>무도장 기준색</b>: 견본 사진 중에는 오일·래커를 칠했거나 따뜻한 조명에서 찍어 실제보다 진하고 주황빛인 사진이 많아요. 그래서 수종마다 아무것도 바르지 않고 샌딩만 한 원목 색을 기준으로 정했어요. 기준은 세계 목재 정보 사이트 The Wood Database(wood-database.com)의 샌딩 견본(같은 판의 실링 견본과 짝으로 찍은 사진)에서 잰 평균색이에요. 예전 스캔 견본은 그대로, 최근 촬영 견본은 두 종류가 같이 있는 수종 25종으로 밝기를 맞춰 썼고, 둘 다 있으면 평균을 냈어요. 사진과 일러스트 모두 결과 대비는 그대로 두고 평균 색만 이 기준색에 맞췄어요. 그곳에 견본이 없는 수종은 가까운 수종으로 대신했어요(육송·레드파인→스카치 파인, 홍송→이스턴 화이트파인, 편백→포트 오포드 시더, 히바→알래스카 시더, 참죽→오스트레일리안 레드시더, 가래나무→버터넛, 회화나무→아까시, 느티나무→코카서스 느티나무, 참나무→잉글리시 오크). 박달나무·대추나무·황벽나무·층층나무·발라우와 합판·MDF·OSB·파티클보드는 기준 견본이 없어 기존 색을 썼어요. 멀바우는 견본이 회갈색으로 바래 있어 설명의 주황빛 갈색과 반씩 섞었어요.</li>
       <li><b>수종별 흡수 차이</b>: 같은 스테인도 나무마다 먹는 양이 달라요. 레드오크(견본 기준)를 1로 두고, 메이플·체리·티크·로즈우드처럼 단단하거나 기름진 나무는 덜 먹고, 소나무·오동나무·MDF는 더 먹게 계산했어요. 오크·애쉬처럼 도관이 큰 나무는 결 사이에 색이 더 고이고, 소나무·체리·메이플·자작은 얼룩(블로칭)이 지고, 침엽수는 무른 춘재가 더 진해지는 결 반전도 반영했어요. 수종별 실측값이 아니라 목공 자료의 일반적인 경향을 넣은 근사값이에요.</li>
       <li><b>유성과 수성의 차이</b>: Minwax는 같은 이름의 색(Special Walnut 등)을 유성·수성이 비슷하게 보이도록 맞춰 만들어서, 레드오크 기준 견본에서는 두 색이 비슷하게 나오는 게 정상이에요. 다만 유성은 더 깊이 스며들고 약간 호박색이 돌고, 수성은 표면 가까이에 머물러 단단하거나 기름진 나무에서는 더 연하게 들어가요. 이 차이를 수종별 흡수 계산에 반영했어요.</li>
-      <li><b>강도·내습성 등급</b>: 강도는 The Wood Database에 실린 야누스(Janka) 경도로 5단계를 나눴어요. 2,500N 미만 1 · 4,500N 미만 2 · 7,000N 미만 3 · 10,000N 미만 4 · 그 이상 5예요. 화이트오크(5,990N)가 3, 하드메이플(6,450N)이 3, 이페(15,520N)가 5예요. 내습성은 같은 곳의 심재 썩음 저항(내후성) 평가를 5단계로 옮기고, 부피 수축률이 16% 이상인 나무는 습도에 따라 많이 움직여서 한 단계 낮췄어요. 자료가 없는 수종은 근연종 값이나 비중으로 추정했고 상세 화면에 표시했어요. 합판·MDF·OSB·파티클보드는 일반 실내용 제품 기준이라, 내수 합판·OSB/3처럼 등급이 높은 제품은 더 강해요. 내습성이 높아도 마감 없이 물에 닿게 두면 갈라지거나 변색될 수 있어요.</li>
+      <li><b>강도·내습성·무게</b>: 강도 등급은 The Wood Database에 실린 얀카(Janka) 경도로 5단계를 나눴어요. 2,500N 미만 1 · 4,500N 미만 2 · 7,000N 미만 3 · 10,000N 미만 4 · 그 이상 5예요. 화이트오크(5,990N)가 3, 하드메이플(6,450N)이 3, 이페(15,520N)가 5예요. 상세 화면의 강도 수치는 같은 곳의 경도·휨강도(MOR)·강성(탄성계수 MOE)·압축강도(결 방향)를 옮기고, 월넛(블랙월넛)을 100으로 둔 비율을 같이 보여줘요. 무게는 같은 곳의 함수율 12% 기건 밀도로 5단계(kg/m³ 기준 450 미만 1 · 550 미만 2 · 700 미만 3 · 850 미만 4 · 그 이상 5)를 나누고, 18T 1220×2440 원장 1장 무게를 밀도 × 0.0536m³로 계산했어요. 박달나무·황벽나무는 논문 값, 대추나무·층층나무·보그 오크는 추정값, 대나무 패널은 제품별 범위의 중간값이에요. 합판·MDF·OSB·파티클보드 밀도는 일반 제품 기준(자작합판은 제조사 시험값 716 kg/m³)이라 제품마다 ±10% 넘게 달라요. 같은 수종도 판마다 ±10~15% 차이가 나요. 내습성은 같은 곳의 심재 썩음 저항(내후성) 평가를 5단계로 옮기고, 부피 수축률이 16% 이상인 나무는 습도에 따라 많이 움직여서 한 단계 낮췄어요. 자료가 없는 수종은 근연종 값이나 비중으로 추정했고 상세 화면에 표시했어요. 합판·MDF·OSB·파티클보드는 일반 실내용 제품 기준이라, 내수 합판·OSB/3처럼 등급이 높은 제품은 더 강해요. 내습성이 높아도 마감 없이 물에 닿게 두면 갈라지거나 변색될 수 있어요.</li>
       <li><b>희귀도</b>: 국내에서 구하기 쉬운 정도예요. 2026년 10월 판매처 조사 때 상시 판매 여부, 견적·소량 유통 여부, 국제 거래 규제(CITES) 대상 여부를 기준으로 5단계로 나눴어요. 시기와 지역에 따라 달라질 수 있어요.</li>
       <li><b>사진 변형</b>: 사진은 잘라내고(결이 세로인 견본 사진은 90° 돌려서) 색을 보정한 뒤 스테인 색 계산을 적용해서 보여줘요. CC BY-SA 사진을 변형한 이미지는 원본과 같은 CC BY-SA 라이선스를 따라요.</li>
       <li>Minwax도 "디지털로 재현한 견본이라 참고용"이라고 밝히고 있어요. 흡수율이 다른 목재(소나무, 체리, 메이플 등)는 얼룩이 생기거나 더 진하게 먹을 수 있으니, 실제 작업 전에는 꼭 자투리에 시험 도장해 보세요.</li>
     </ul>
-    <p>출처: <a href="https://www.minwax.com/en/products/one-step-stain-finish/one-step-stain-topcoat" target="_blank" rel="noopener">Minwax One Step Stain &amp; Topcoat</a> · <a href="https://doi.org/10.1364/AO.27.001278" target="_blank" rel="noopener">Lekner &amp; Dorf (1988)</a> · <a href="https://www.minwax.com/en/wood-stain-color-guide/browse-color-stains" target="_blank" rel="noopener">Minwax 색상 가이드</a></p>
+    <p>출처: <a href="https://www.minwax.com/en/products/one-step-stain-finish/one-step-stain-topcoat" target="_blank" rel="noopener">Minwax One Step Stain &amp; Topcoat</a> · <a href="https://doi.org/10.1364/AO.27.001278" target="_blank" rel="noopener">Lekner &amp; Dorf (1988)</a> · <a href="https://www.minwax.com/en/wood-stain-color-guide/browse-color-stains" target="_blank" rel="noopener">Minwax 색상 가이드</a> · <a href="https://www.wood-database.com/" target="_blank" rel="noopener">The Wood Database</a> (색·강도·내습성·밀도) · <a href="https://doi.org/10.5658/WOOD.2017.45.5.519" target="_blank" rel="noopener">김현우 외 (2017) 황벽나무</a> · <a href="https://html.rhhz.net/linyekexue/html/20120228.htm" target="_blank" rel="noopener">孙耀星 외 (2012) 박달나무</a> · <a href="https://cdn.shopify.com/s/files/1/0578/1861/1764/files/Birch_Plywood_Technical_Data_By_Nilam_Makmur.pdf" target="_blank" rel="noopener">자작합판 시험 성적</a></p>
     <details style="margin-top:10px"><summary>사진 출처 (<span id="ccount"></span>종)</summary><ul class="credits" id="credits"></ul></details>
   </details>
   <footer><div>견본 측정일 2026.11.2 · 유성 Wood Finish 25색 · 수성 MW 컬러 18색 (각 투명 포함) · 목재 100종 (실사 사진 79종 · 일러스트 21종)</div><div class="copy">© 2026 박철웅. All rights reserved. 페이지 구성·글·일러스트·색 계산의 저작권은 박철웅에게 있어요. 실사 사진은 각 원작자의 라이선스(퍼블릭 도메인·CC)를 따르며 출처는 위 "사진 출처"에 있어요. Minwax, Wood Finish는 The Sherwin-Williams Company의 상표예요.</div></footer>
@@ -711,13 +713,20 @@ function put(cv,w,h,data){cv.width=w;cv.height=h;cv.getContext('2d').putImageDat
 const $=s=>document.querySelector(s);
 const vList=$('#vList'),vDetail=$('#vDetail'),vQuiz=$('#vQuiz');
 let query='';
-const F={g:new Set(),lv:new Set(),use:new Set(),ra:new Set(),sg:new Set(),mg:new Set()};
-const anyF=()=>F.g.size||F.lv.size||F.use.size||F.ra.size||F.sg.size||F.mg.size||query;
+const F={g:new Set(),lv:new Set(),use:new Set(),ra:new Set(),sg:new Set(),mg:new Set(),wg:new Set()};
+const anyF=()=>F.g.size||F.lv.size||F.use.size||F.ra.size||F.sg.size||F.mg.size||F.wg.size||query;
 const RA=[1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 3, 3, 1, 1, 1, 1, 1, 2, 1, 3, 2, 2, 2, 4, 3, 3, 1, 2, 2, 1, 2, 2, 1, 1, 2, 3, 2, 2, 3, 3, 3, 3, 3, 3, 2, 3, 3, 3, 3, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 3, 4, 5, 4, 4, 5, 4, 3, 4, 4, 5, 5, 5, 4, 4, 4, 4, 5, 5, 4, 4, 5, 5, 4, 5, 5, 5];
 const RAN=['','흔함','보통','구하기 어려움','희귀','매우 희귀'];
 /* strength & moisture: [강도 등급, 내습성 등급, Janka 경도 N, 휨강도 MPa, 부피 수축률 %, 썩음 저항 단계, 출처]
    출처 'wd' = The Wood Database 수종 페이지, 'rel:이름' = 근연종 자료, 'est' = 비중 기반 추정, 'panel' = 판재 일반값 */
 const PRP=[[2,1,3150,79.2,10.7,1,"wd"],[1,2,2420,83.3,13.6,2,"wd"],[1,1,1680,63.0,12.9,1,"wd"],[1,3,1420,36.4,10.5,3,"wd"],[2,4,2620,84.8,10.1,4,"rel:포트 오포드 시더(같은 편백속)"],[2,3,2760,86.2,11.6,3,"wd"],[1,2,2420,83.3,13.6,2,"rel:스카치 파인"],[1,2,1690,59.3,8.2,2,"rel:이스턴 화이트파인(같은 잣나무류)"],[2,3,2670,80.1,0,3,"wd"],[1,1,1420,66.1,12.8,1,"wd"],[1,2,2400,77.9,12.4,2,"wd"],[1,4,1560,51.7,6.8,4,"wd"],[1,2,1690,59.3,8.2,2,"wd"],[2,3,4120,100.0,12.2,3,"wd"],[2,4,2580,76.6,9.2,4,"rel:알래스카 시더(같은 측백나무과)"],[3,4,6760,96.8,8.3,4,"wd"],[2,5,4000,60.7,7.8,5,"rel:아로마틱 레드시더(같은 향나무속)"],[2,3,3340,0,0,3,"wd"],[2,1,4280,71.9,7.5,1,"wd"],[3,3,6340,98.2,10.7,3,"wd"],[4,5,7620,145.2,8.0,5,"wd"],[2,3,3130,71.5,10.8,3,"rel:오스트레일리안 레드시더(같은 참죽속)"],[1,4,1330,37.8,6.4,4,"wd"],[1,1,1850,55.2,9.1,1,"wd"],[1,2,2460,77.3,12.6,2,"wd"],[3,2,4760,96.0,8.7,2,"wd"],[2,1,2620,67.6,12.6,1,"wd"],[2,4,4440,80.5,8.7,4,"wd"],[3,5,4740,97.1,7.2,5,"wd"],[2,4,4020,80.8,7.5,4,"wd"],[3,4,6060,110.9,12.9,4,"wd"],[3,5,5310,97.1,8.8,5,"wd"],[4,3,7120,122.3,15.7,3,"wd"],[5,5,15520,177.5,12.4,5,"wd"],[5,5,14800,175.1,12.6,5,"wd"],[3,1,6720,0,0,1,"wd"],[2,5,4490,100.7,12.8,5,"wd"],[3,4,5990,102.3,16.3,5,"wd"],[3,1,5430,99.2,13.7,1,"wd"],[3,1,5870,103.5,13.3,1,"wd"],[3,1,6450,109.0,14.7,1,"wd"],[2,1,4230,92.4,12.6,1,"wd"],[2,5,4230,84.8,11.5,5,"wd"],[3,1,6460,110.1,17.9,1,"wd"],[2,2,3690,81.4,14.6,2,"wd"],[4,1,8360,139.3,16.7,1,"wd"],[3,1,5610,114.5,16.8,1,"wd"],[1,2,1820,60.0,15.8,2,"wd"],[1,2,2400,69.7,12.7,2,"wd"],[2,1,3430,69.0,14.1,1,"wd"],[3,5,4980,97.1,13.0,5,"wd"],[3,3,5410,111.5,13.0,3,"wd"],[2,4,3010,71.4,12.6,4,"wd"],[4,1,8100,94.5,13.6,1,"wd"],[3,5,4640,96.7,13.0,5,"wd"],[3,2,5320,0,0,2,"wd"],[5,2,0,0,0,2,"est"],[5,1,10230,122.1,19.1,1,"wd"],[4,3,0,0,0,3,"est"],[3,2,5120,103.3,13.8,2,"wd"],[4,2,7380,83.3,13.8,2,"wd"],[4,5,7560,133.8,10.2,5,"rel:아까시(같은 콩과)"],[1,2,2180,55.9,10.6,2,"rel:버터넛(같은 가래나무속)"],[2,3,0,0,0,3,"est"],[3,2,0,0,0,2,"est"],[3,2,5610,0,0,2,"panel"],[2,1,0,0,0,1,"panel"],[3,2,0,0,0,2,"panel"],[1,1,0,0,0,1,"panel"],[2,3,2760,0,0,3,"panel"],[1,2,1790,0,0,2,"panel"],[1,1,1910,0,0,1,"panel"],[2,3,2670,0,0,3,"panel"],[5,5,11190,151.7,10.6,5,"wd"],[2,1,4230,0,0,1,"est"],[4,4,0,0,0,4,"est"],[4,3,8160,122.8,17.8,4,"wd"],[5,2,12060,143.0,12.8,2,"wd"],[5,5,10790,128.6,14.3,5,"wd"],[5,5,10440,115.0,8.6,5,"wd"],[4,4,7580,126.7,7.9,4,"wd"],[4,5,8600,151.7,13.3,5,"wd"],[5,4,10720,168.3,13.9,4,"wd"],[5,5,14140,158.0,7.0,5,"wd"],[5,5,19510,123.9,14.0,5,"wd"],[5,5,16900,195.0,10.7,5,"wd"],[3,1,6450,109.0,14.7,1,"wd"],[3,1,6450,109.0,14.7,1,"wd"],[3,5,6750,131.6,8.4,5,"wd"],[4,3,7950,115.9,12.0,3,"wd"],[5,4,14370,138.1,12.1,4,"wd"],[3,5,5620,96.3,6.9,5,"rel:나라(같은 나무의 버)"],[5,5,12900,174.4,11.7,5,"wd"],[2,2,3740,0,0,2,"wd"],[5,5,16320,213.6,7.7,5,"wd"],[4,4,8780,113.1,9.8,4,"wd"],[5,5,11640,128.6,9.2,5,"wd"],[3,1,5180,87.0,12.4,1,"wd"],[3,4,5140,93.8,12.9,4,"wd"],[5,5,14500,75.0,0,5,"wd"]];
+/* weight & stiffness: [기건 밀도 kg/m³ (함수율 12%), 강성(탄성계수) GPa, 압축강도 MPa, 출처]
+   출처 'wd'·'rel:이름'은 PRP와 같음, 'lit:설명' = 논문 값, 'est' = 추정, 'panel' = 판재 일반값, 'range' = 제품별 범위의 중간값 */
+const PHY=[[515,10.06,41.6,"wd"],[550,10.08,41.5,"wd"],[405,9.7,35.5,"wd"],[360,7.65,28.0,"wd"],[465,11.35,41.9,"rel:포트 오포드 시더(같은 편백속)"],[510,12.17,47.9,"wd"],[550,10.08,41.5,"rel:스카치 파인"],[400,8.55,33.1,"rel:이스턴 화이트파인(같은 잣나무류)"],[500,8.76,41.4,"wd"],[415,8.28,41.0,"wd"],[465,11.24,37.3,"wd"],[370,7.66,31.4,"wd"],[400,8.55,33.1,"wd"],[650,13.7,58.4,"wd"],[495,9.79,43.5,"rel:알래스카 시더(같은 측백나무과)"],[675,10.15,58.0,"wd"],[530,6.07,41.5,"rel:아로마틱 레드시더(같은 향나무속)"],[465,9.04,0,"wd"],[595,9.07,42.1,"wd"],[585,11.07,52.1,"wd"],[815,15.93,73.4,"wd"],[485,9.22,36.1,"rel:오스트레일리안 레드시더(같은 참죽속)"],[280,4.38,20.7,"wd"],[375,7.91,30.8,"wd"],[480,11.39,42.2,"wd"],[620,13.37,54.4,"wd"],[450,9.52,40.1,"wd"],[520,11.56,40.1,"wd"],[655,12.28,54.8,"wd"],[590,10.06,46.6,"wd"],[665,12.35,58.9,"wd"],[660,10.9,53.5,"wd"],[850,16.95,70.9,"wd"],[1050,21.3,90.7,"wd"],[1085,22.33,95.5,"wd"],[675,19.0,77.5,"range"],[610,11.59,52.3,"wd"],[755,12.15,50.8,"wd"],[700,12.14,46.8,"wd"],[675,12.0,51.1,"wd"],[705,12.62,54.0,"wd"],[610,11.31,45.1,"wd"],[560,10.3,49.0,"wd"],[710,14.31,57.0,"wd"],[560,9.24,38.1,"wd"],[800,14.9,63.5,"wd"],[690,13.86,56.3,"wd"],[415,10.07,32.6,"wd"],[455,10.9,38.2,"wd"],[545,9.79,37.1,"wd"],[675,10.6,46.3,"wd"],[640,10.81,50.2,"wd"],[590,8.61,43.8,"wd"],[735,11.93,54.1,"wd"],[620,10.73,51.1,"wd"],[690,0,0,"wd"],[905,0,0,"lit:중국 임업과학 2012, 박달나무(Betula schmidtii) 기건밀도 0.904"],[835,13.86,63.2,"wd"],[850,0,0,"est"],[600,10.55,50.0,"wd"],[690,7.8,44.1,"wd"],[770,14.14,70.3,"rel:아까시(같은 콩과)"],[435,8.14,35.2,"rel:버터넛(같은 가래나무속)"],[420,0,43.8,"lit:목재공학 2017, 황벽나무 기건밀도 0.41~0.43"],[650,0,0,"est"],[716,7.86,0,"panel"],[750,0,0,"panel"],[640,0,0,"panel"],[650,0,0,"panel"],[550,0,0,"panel"],[460,0,0,"panel"],[480,0,0,"panel"],[600,0,0,"panel"],[905,20.26,83.7,"wd"],[610,11.31,45.1,"rel:레드메이플(바탕 나무)"],[700,0,0,"est"],[805,16.37,63.5,"wd"],[980,12.39,68.7,"wd"],[915,14.07,63.5,"wd"],[855,12.3,61.3,"wd"],[745,13.07,63.7,"wd"],[870,17.57,80.7,"wd"],[890,18.41,75.8,"wd"],[1095,18.7,81.3,"wd"],[1260,17.11,85.4,"wd"],[1210,23.2,119.0,"wd"],[705,12.62,54.0,"wd"],[705,12.62,54.0,"wd"],[830,14.93,67.2,"wd"],[825,16.64,69.5,"wd"],[1035,15.12,80.2,"wd"],[655,11.89,57.0,"rel:나라(같은 나무의 버)"],[1050,20.78,98.7,"wd"],[580,0,0,"wd"],[1270,17.95,72.9,"wd"],[805,10.93,63.9,"wd"],[855,11.64,64.7,"wd"],[610,10.37,48.7,"wd"],[675,0,0,"wd"],[1210,0,0,"wd"]];
+const SHEET=1.22*2.44*0.018; /* 18T 1220×2440 원장 부피 m³ */
+const WG=PHY.map(p=>p[0]<450?1:p[0]<550?2:p[0]<700?3:p[0]<850?4:5);
+const WGN=['','아주 가벼움','가벼움','보통','무거움','아주 무거움'];
+const WAL=36; /* 비교 기준: 월넛(블랙월넛) */
 const SGN=['','아주 무름','무름','보통','단단함','아주 단단함'];
 const MGN=['','아주 약함','약함','보통','강함','아주 강함'];
 const ROTN=['','썩음에 아주 약함','썩음에 약함','썩음 저항 보통','썩음에 강함','썩음에 아주 강함'];
@@ -746,6 +755,7 @@ function chipsHTML(){
   row('#rachips','ra',[1,2,3,4,5].map(n=>[String(n),'◆'.repeat(n)+' '+RAN[n]]));
   row('#sgchips','sg',[1,2,3,4,5].map(n=>[String(n),n+' '+SGN[n]]));
   row('#mgchips','mg',[1,2,3,4,5].map(n=>[String(n),n+' '+MGN[n]]));
+  row('#wgchips','wg',[1,2,3,4,5].map(n=>[String(n),n+' '+WGN[n]]));
   $('#reset').hidden=!anyF();
 }
 /* ---------- real photos (Wikimedia Commons) with illustration fallback ---------- */
@@ -809,11 +819,11 @@ function pump(){
 }
 function renderList(){
   const q=query.trim().toLowerCase();
-  const idx=D.map((r,i)=>i).filter(i=>(!F.g.size||F.g.has(D[i][0]))&&(!F.lv.size||F.lv.has(String(D[i][3])))&&(!F.use.size||[...F.use].some(k=>inUse(i,k)))&&(!F.ra.size||F.ra.has(String(RA[i])))&&(!F.sg.size||F.sg.has(String(PRP[i][0])))&&(!F.mg.size||F.mg.has(String(PRP[i][1])))
+  const idx=D.map((r,i)=>i).filter(i=>(!F.g.size||F.g.has(D[i][0]))&&(!F.lv.size||F.lv.has(String(D[i][3])))&&(!F.use.size||[...F.use].some(k=>inUse(i,k)))&&(!F.ra.size||F.ra.has(String(RA[i])))&&(!F.sg.size||F.sg.has(String(PRP[i][0])))&&(!F.mg.size||F.mg.has(String(PRP[i][1])))&&(!F.wg.size||F.wg.has(String(WG[i])))
     &&(!q||[D[i][1],D[i][2],useOf(i),D[i][5],D[i][6]].join(' ').toLowerCase().includes(q)));
   $('#count').textContent=idx.length+'종';
   $('#reset').hidden=!anyF();
-  $('#grid').innerHTML=idx.map(i=>`<button class="card" data-i="${i}" aria-label="${D[i][1]} 선택"><canvas class="board" data-i="${i}" width="300" height="138"></canvas><span class="meta"><span class="nm">${D[i][1]} <span class="ph" hidden>사진</span></span><span class="en">${D[i][2]}</span><span class="tags"><span class="lvs" aria-label="가공 난이도 ${D[i][3]}">${'★'.repeat(D[i][3])}<span class="off">${'★'.repeat(5-D[i][3])}</span></span><span class="ra r${RA[i]}">${RAN[RA[i]]}</span></span><span class="pp" aria-label="강도 ${PRP[i][0]}, 내습성 ${PRP[i][1]}">강도 ${bars(PRP[i][0],"sgb")} 내습 ${bars(PRP[i][1],"mgb")}</span></span></button>`).join('')
+  $('#grid').innerHTML=idx.map(i=>`<button class="card" data-i="${i}" aria-label="${D[i][1]} 선택"><canvas class="board" data-i="${i}" width="300" height="138"></canvas><span class="meta"><span class="nm">${D[i][1]} <span class="ph" hidden>사진</span></span><span class="en">${D[i][2]}</span><span class="tags"><span class="lvs" aria-label="가공 난이도 ${D[i][3]}">${'★'.repeat(D[i][3])}<span class="off">${'★'.repeat(5-D[i][3])}</span></span><span class="ra r${RA[i]}">${RAN[RA[i]]}</span></span><span class="pp" aria-label="강도 ${PRP[i][0]}, 내습성 ${PRP[i][1]}, 무게 ${WG[i]}"><span>강도 ${bars(PRP[i][0],"sgb")}</span><span>내습 ${bars(PRP[i][1],"mgb")}</span><span>무게 ${bars(WG[i],"wgb")}</span></span></span></button>`).join('')
     || '<p class="count" style="grid-column:1/-1">조건에 맞는 목재가 없어요. 필터를 줄이거나 다른 말로 검색해 보세요.</p>';
   queue.length=0;
   document.querySelectorAll('#grid canvas').forEach(cv=>queue.push(cv));
@@ -834,6 +844,14 @@ function show(v,toTop){
   $('#crumb').textContent=v===vDetail?D[+vDetail.dataset.i][1]:v===vQuiz?quizCrumb():'';
   window.scrollTo(0,v===vList&&!toTop?listY:0);
 }
+function ptab(i){
+  const [,,jn,mor]=PRP[i],[dn,moe,cr]=PHY[i],W=[PRP[WAL][2],PRP[WAL][3],PHY[WAL][1],PHY[WAL][2],PHY[WAL][0]];
+  const rows=[['경도','찍힘에 버티는 힘',jn,'N',W[0]],['휨강도','부러질 때까지 버티는 힘',mor,'MPa',W[1]],['강성','하중에 덜 처지는 정도',moe,'GPa',W[2]],['압축강도','결 방향으로 누를 때',cr,'MPa',W[3]],['밀도','함수율 12% 기건',dn,'kg/m³',W[4]]];
+  const tr=rows.map(([k,d,v,u,w])=>{if(!v)return `<tr><td>${k} <small>${d}</small></td><td class="v" colspan="2"><small>자료 없음</small></td></tr>`;const r=Math.round(v/w*100);
+    return `<tr><td>${k} <small>${d}</small></td><td class="v">${fmt(v)} ${u}</td><td class="v"><span class="rb"><i style="width:${Math.min(r,250)/2.5}%"></i></span>${r}</td></tr>`;}).join('');
+  return `<table class="ptab"><tr><th>항목</th><th>값</th><th>월넛=100</th></tr>${tr}<tr><td>18T 원장 무게 <small>1220×2440 1장</small></td><td class="v">약 ${(dn*SHEET).toFixed(1)} kg</td><td class="v"><span class="rb"><i style="width:${Math.min(Math.round(dn/W[4]*100),250)/2.5}%"></i></span>${Math.round(dn/W[4]*100)}</td></tr></table>
+  <small class="rdesc">흠 없는 작은 원목 시편 기준이에요. 집성목은 접착면·핑거조인트 때문에, 합판은 결이 엇갈려서 실제 판재는 다를 수 있어요.</small>`;
+}
 const stars=n=>'★'.repeat(n)+'<span class="off">'+'★'.repeat(5-n)+'</span>';
 const LV=['','아주 쉬움','쉬움','보통','어려움','아주 어려움'];
 function openDetail(i){
@@ -849,11 +867,13 @@ function openDetail(i){
       <div><span class="label">${G[g]}</span><h2>${nm}</h2><div class="en">${en}</div></div>
       <div class="lv"><span class="stars">${stars(lv)}</span><span>가공 난이도 ${lv}/5 · ${LV[lv]}</span></div>
       <div class="lv"><span class="rad">${'◆'.repeat(RA[i])}<span class="off">${'◆'.repeat(5-RA[i])}</span></span><span>희귀도 ${RA[i]}/5 · ${RAN[RA[i]]} <small class="rdesc">(${RAD[RA[i]]})</small></span></div>
-      ${(()=>{const [sg,mg,jn,mor,vol,rot,src]=PRP[i];const note=src.startsWith('rel:')?' · 근연종 '+src.slice(4)+' 자료':src==='est'?' · 자료 부족, 비중 기준 추정':src==='panel'?' · 판재 일반값 (제품·접착제 등급에 따라 다름)':'';
-        const sd=jn?`경도 ${fmt(Math.round(jn/4.448))} lbf (${fmt(jn)} N)${mor?' · 휨강도 '+mor+' MPa':''}`:'';
+      ${(()=>{const [sg,mg,jn,mor,vol,rot,src]=PRP[i];const [dn,moe,cr,ps]=PHY[i];const note=src.startsWith('rel:')?' · 근연종 '+src.slice(4)+' 자료':src==='est'?' · 자료 부족, 비중 기준 추정':src==='panel'?' · 판재 일반값 (제품·접착제 등급에 따라 다름)':'';
+        const sd=jn?`경도 ${fmt(Math.round(jn/4.448))} lbf (${fmt(jn)} N)${mor?' · 휨강도 '+mor+' MPa':''}${moe?' · 강성 '+moe+' GPa':''}${cr?' · 압축 '+cr+' MPa':''}`:'';
         const md=[ROTN[rot],vol?'부피 수축률 '+vol+'%':''].filter(Boolean).join(' · ');
+        const wn=ps.startsWith('rel:')?' · 근연종 '+ps.slice(4)+' 자료':ps.startsWith('lit:')?' · '+ps.slice(4):ps==='est'?' · 자료 부족, 추정값':ps==='panel'?' · 판재 일반값, 제품마다 ±10% 넘게 다름':ps==='range'?' · 제품별 범위(밀도 500~850 kg/m³)의 중간값':'';
         return `<div class="lv">${bars(sg,'sgb big')}<span>강도 ${sg}/5 · ${SGN[sg]} <small class="rdesc">(${sd||'경도 자료 없음'}${note})</small></span></div>
-      <div class="lv">${bars(mg,'mgb big')}<span>내습성 ${mg}/5 · ${MGN[mg]} <small class="rdesc">(${md}${note&&!sd?'':''})</small></span></div>`;})()}
+      <div class="lv">${bars(mg,'mgb big')}<span>내습성 ${mg}/5 · ${MGN[mg]} <small class="rdesc">(${md}${note&&!sd?'':''})</small></span></div>
+      <div class="lv">${bars(WG[i],'wgb big')}<span>무게 ${WG[i]}/5 · ${WGN[WG[i]]} <small class="rdesc">(기건 밀도 ${fmt(dn)} kg/m³ · 18T 1220×2440 1장 약 ${(dn*SHEET).toFixed(1)}kg · 월넛의 ${Math.round(dn/PHY[WAL][0]*100)}%${wn})</small></span></div>`;})()}
       <div class="price${est?' est':''}"><span class="label">가격대</span><b>${pr}</b><small>${est?'국내 상시 판매가 미확인 · 판매처 견적 필요':'2026.10.29 온라인 판매가 (월넛·오크·애쉬·메이플·비치·편백·캄포는 2026.11.4 특수목닷컴 재확인) · 18T 1220×2440 1장 기준(솔리드는 특수목닷컴 솔리드 집성판재 18T 1220×2400, 판재 외 수종은 표기 규격) · 배송비 별도 · 만 = 만원'}</small></div>
     </div>
   </div>
@@ -864,6 +884,7 @@ function openDetail(i){
     <dt class="pro">장점</dt><dd>${pro}</dd>
     <dt class="con">단점</dt><dd>${con}</dd>
     <dt class="warn">가공·도장 주의</dt><dd>${warn}</dd>
+    <dt>강도·무게 수치</dt><dd>${ptab(i)}</dd>
   </dl>
   <section class="vsec" aria-labelledby="vh">
     <div class="rhead">
@@ -944,7 +965,7 @@ function quizBoard(cv,i,R,big){
 }
 function hintText(n,i){
   const r=D[i];
-  if(n===1)return `분류 <b>${G[r[0]]}</b> · 가공 난이도 ${'★'.repeat(r[3])} · 희귀도 ${RAN[RA[i]]} · 강도 ${PRP[i][0]}/5 · 내습성 ${PRP[i][1]}/5`;
+  if(n===1)return `분류 <b>${G[r[0]]}</b> · 가공 난이도 ${'★'.repeat(r[3])} · 희귀도 ${RAN[RA[i]]} · 강도 ${PRP[i][0]}/5 · 내습성 ${PRP[i][1]}/5 · 무게 ${WG[i]}/5`;
   if(n===2)return `색은 <b>${esc(maskName(r[5],i))}</b>, 주로 ${esc(maskName(useOf(i)||'-',i))}에 써요`;
   return `${esc(maskName(r[6],i))} · 영문 이름 첫 글자 <b>${esc(woodEn(i).charAt(0).toUpperCase())}</b> · 오답 2개를 지웠어요`;
 }
