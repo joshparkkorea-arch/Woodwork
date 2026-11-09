@@ -65,6 +65,47 @@ button{font:inherit;color:inherit}
 .sgb,.mgb,.wgb{letter-spacing:1px;font-size:9px}.sgb{color:#8A6A3C}.mgb{color:#3E6E8C}.wgb{color:#6E5A7E}.sgb .off,.mgb .off,.wgb .off{color:var(--line)}
 .sgb.big,.mgb.big,.wgb.big{font-size:12px;letter-spacing:2px}
 .ptab{border-collapse:collapse;font-size:13px;width:100%;max-width:520px}.ptab th,.ptab td{padding:4px 8px 4px 0;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle}.ptab th{font-weight:600;color:var(--muted);font-size:11.5px}.ptab td.v{white-space:nowrap}.ptab .rb{display:inline-block;width:70px;height:6px;border-radius:3px;background:var(--line);vertical-align:middle;margin-right:6px;overflow:hidden}.ptab .rb i{display:block;height:100%;background:#8A6A3C}.ptab small{color:var(--muted)}
+/* compare */
+.cardw{position:relative;display:flex;flex-direction:column;min-width:0}.cardw>.card{flex:1}
+.cmpb{position:absolute;top:6px;right:6px;border:1px solid rgba(0,0,0,.18);background:rgba(255,255,255,.9);color:#1D1E1C;border-radius:999px;padding:3px 9px;font-size:12px;font-weight:600;cursor:pointer;line-height:1.4}
+.cmpb[aria-pressed="true"],.dcmp[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.dcmp{align-self:flex-start;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 14px;font-size:14px;cursor:pointer}
+.cmpbar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--surface);border-top:1px solid var(--line);box-shadow:0 -4px 16px rgba(0,0,0,.08);padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:10px}
+.cmpbar .cl{flex:1;min-width:0;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.cmpbar .ci{flex:none;display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;padding:2px 2px 2px 10px;font-size:13px;background:var(--bg);white-space:nowrap}
+.cmpbar .ci button{border:0;background:none;font-size:16px;line-height:1;padding:3px 7px;cursor:pointer;color:var(--muted)}
+.cmpbar .go{flex:none;border:0;background:var(--accent);color:var(--accent-ink);border-radius:999px;padding:9px 15px;font-size:14px;font-weight:600;cursor:pointer}
+.cmpbar .go:disabled{opacity:.55;cursor:default}
+body.hascmp{padding-bottom:76px}
+.toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:30;background:var(--ink);color:var(--bg);border-radius:10px;padding:9px 14px;font-size:13.5px;max-width:calc(100% - 32px);box-shadow:0 4px 16px rgba(0,0,0,.2)}
+.sortsel{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:7px 8px;font:inherit;font-size:14px;color:var(--ink);max-width:100%}
+.cmp{display:flex;flex-direction:column;gap:22px}
+.cmp .ctop{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;flex-wrap:wrap}
+.cmp .ctop h2{margin:2px 0 0}
+.cmp .tbtns{display:flex;gap:6px}
+.cmp .tbtns button,.cmpcol .acts button{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:5px 12px;font-size:13px;cursor:pointer}
+.cmpcols{display:grid;gap:10px}
+.cmpcol{display:flex;flex-direction:column;gap:3px;min-width:0}
+.cmpcol .board{border-radius:3px;box-shadow:none}
+#vCmp,.cmp,.cmp *{min-width:0}#vCmp{width:100%;max-width:100%;box-sizing:border-box}
+.cmpcol b{font-size:15px;line-height:1.3;margin-top:4px}
+.cmpcol .en{font-size:12px;color:var(--muted);line-height:1.3}
+.cmpcol .acts{display:flex;gap:5px;flex-wrap:wrap;margin-top:4px}
+.cmpcol .acts button{padding:3px 10px;font-size:12px}
+.cmpcol .hx{font-size:11.5px;color:var(--muted)}
+.cstn{display:flex;flex-direction:column;gap:10px}
+.cstn .fins{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+.cstn .fins button{flex:none;display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:5px 11px;font-size:13px;cursor:pointer;white-space:nowrap}
+.cstn .fins button[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent);font-weight:600}
+.cstn .fins i{width:12px;height:12px;border-radius:50%;display:inline-block;box-shadow:0 0 0 1px rgba(0,0,0,.15)}
+.ctab{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.crow{border-bottom:1px solid var(--line);padding:10px 0}
+.crow .rl{font-size:12.5px;color:var(--muted);margin-bottom:5px;font-weight:600}
+.crow .rv{display:grid;gap:10px;font-size:13.5px;line-height:1.45}
+.crow .cv{min-width:0;overflow-wrap:anywhere}
+.crow .cv small{color:var(--muted)}
+.cbar{display:block;height:6px;border-radius:3px;background:var(--line);margin-top:5px;overflow:hidden}.cbar i{display:block;height:100%;background:#8A6A3C}
+.best{display:table;font-size:11px;font-weight:600;color:var(--accent-ink);background:var(--accent);border-radius:4px;padding:0 5px;margin-top:3px;line-height:1.6}
 .rad{color:var(--warn);letter-spacing:2px;font-size:13px}.rad .off{color:var(--line)}
 .rdesc{font-size:11.5px;color:var(--muted)}
 .chips{display:flex;flex-wrap:wrap;gap:6px}.chip .cr{font-size:11px;opacity:.7}
@@ -232,7 +273,7 @@ footer{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padd
   <header id="top">
     <div class="tmain">
     <h1>목재 109종 견본</h1>
-    <p class="lede">국내 목공에서 쓰는 목재 109종을 모았어요. 목재를 고르면 특징·가격·사용처·강도·무게가 나오고, 아래에서 수성·유성 스테인을 고르면 Minwax 공식 색상 견본에서 측정한 값으로 그 목재에 칠했을 때의 색을 보여줘요. 색 견본을 누르면 실제 시공 사진을 구글 이미지에서 찾아볼 수 있어요.</p>
+    <p class="lede">국내 목공에서 쓰는 목재 109종을 모았어요. 목재를 고르면 특징·가격·사용처·강도·무게가 나오고, 아래에서 수성·유성 스테인을 고르면 Minwax 공식 색상 견본에서 측정한 값으로 그 목재에 칠했을 때의 색을 보여줘요. 색 견본을 누르면 실제 시공 사진을 구글 이미지에서 찾아볼 수 있어요. 카드의 <b>＋ 비교</b>로 최대 3종을 담으면 강도·무게·내습성을 나란히 보고, 같은 스테인을 한 번에 칠해 볼 수 있어요.</p>
     </div>
     <button type="button" class="qentry" id="qStart" aria-label="나무 이름 맞추기 퀴즈 시작">
       <span class="qprev"><canvas id="qPrev" width="300" height="138"></canvas><b>?</b></span>
@@ -242,8 +283,8 @@ footer{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padd
 
   <section id="vList" class="wrap" style="gap:16px">
     <div class="filters">
-      <div class="srow"><input class="search" id="q" type="search" placeholder="검색 (예: 월넛, 도마, 악기)" aria-label="목재 검색"><span class="count" id="count"></span><button type="button" class="reset" id="reset" hidden>필터 초기화</button></div>
-      <p class="fhint">여러 개를 골라도 돼요. 같은 줄은 '또는', 다른 줄끼리는 '그리고'로 찾아요.</p>
+      <div class="srow"><input class="search" id="q" type="search" placeholder="검색 (예: 월넛, 도마, 악기)" aria-label="목재 검색"><select class="sortsel" id="sort" aria-label="목록 정렬"><option value="">기본 순서</option><option value="jk-">얀카 경도 높은순</option><option value="jk+">얀카 경도 낮은순</option><option value="wg+">가벼운순</option><option value="wg-">무거운순</option><option value="mg-">내습성 높은순</option><option value="lv+">가공 쉬운순</option><option value="ra+">구하기 쉬운순</option><option value="nm">이름순</option></select><span class="count" id="count"></span><button type="button" class="reset" id="reset" hidden>필터 초기화</button></div>
+      <p class="fhint">여러 개를 골라도 돼요. 같은 줄은 '또는', 다른 줄끼리는 '그리고'로 찾아요. 카드의 <b>＋ 비교</b>를 누르면 최대 3종을 나란히 비교할 수 있어요.</p>
       <div class="frow"><span class="flabel">소재</span><div class="chips" id="chips" role="group" aria-label="소재 분류"></div></div>
       <div class="frow"><span class="flabel">난이도</span><div class="chips" id="lvchips" role="group" aria-label="가공 난이도"></div></div>
       <div class="frow"><span class="flabel">용도</span><div class="chips" id="usechips" role="group" aria-label="용도"></div></div>
@@ -257,6 +298,9 @@ footer{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padd
 
   <section id="vDetail" class="wrap" hidden></section>
   <section id="vQuiz" class="wrap" hidden aria-live="polite"></section>
+  <section id="vCmp" class="wrap" hidden></section>
+  <div class="cmpbar" id="cmpBar" hidden role="region" aria-label="비교함"><div class="cl" id="cmpList"></div><button type="button" class="go" id="cmpGo">비교하기</button></div>
+  <div class="toast" id="toast" hidden role="status"></div>
 
   <details class="note" id="method">
     <summary>색·강도·무게를 정한 방법과 한계</summary>
@@ -272,6 +316,7 @@ footer{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padd
       <li><b>수종별 흡수 차이</b>: 같은 스테인도 나무마다 먹는 양이 달라요. 레드오크(견본 기준)를 1로 두고, 메이플·체리·티크·로즈우드처럼 단단하거나 기름진 나무는 덜 먹고, 소나무·오동나무·MDF는 더 먹게 계산했어요. 오크·애쉬처럼 도관이 큰 나무는 결 사이에 색이 더 고이고, 소나무·체리·메이플·자작은 얼룩(블로칭)이 지고, 침엽수는 무른 춘재가 더 진해지는 결 반전도 반영했어요. 수종별 실측값이 아니라 목공 자료의 일반적인 경향을 넣은 근사값이에요.</li>
       <li><b>유성과 수성의 차이</b>: Minwax는 같은 이름의 색(Special Walnut 등)을 유성·수성이 비슷하게 보이도록 맞춰 만들어서, 레드오크 기준 견본에서는 두 색이 비슷하게 나오는 게 정상이에요. 다만 유성은 더 깊이 스며들고 약간 호박색이 돌고, 수성은 표면 가까이에 머물러 단단하거나 기름진 나무에서는 더 연하게 들어가요. 이 차이를 수종별 흡수 계산에 반영했어요.</li>
       <li><b>강도·내습성·무게</b>: 강도 등급은 The Wood Database에 실린 얀카(Janka) 경도로 5단계를 나눴어요. 2,500N 미만 1 · 4,500N 미만 2 · 7,000N 미만 3 · 10,000N 미만 4 · 그 이상 5예요. 화이트오크(5,990N)가 3, 하드메이플(6,450N)이 3, 이페(15,520N)가 5예요. 목록 카드·필터·상세 화면·퀴즈 힌트에 얀카 경도 숫자(N, 상세는 lbf도)를 함께 적었어요. 얀카 측정값이 없던 수종은 층층나무는 꽃산딸나무, 보그 오크는 잉글리시 오크, 라왕합판은 겉 단판인 라왕 값을 썼고, 박달나무·대추나무·황벽나무는 측정값이 있는 81종의 밀도-경도 관계로 추정했어요(≈ 표시, 오차 약 ±17%). MDF·OSB·파티클보드·태고합판은 얀카 시험 대상이 아니라 숫자를 넣지 않았어요. 상세 화면의 강도 수치는 같은 곳의 경도·휨강도(MOR)·강성(탄성계수 MOE)·압축강도(결 방향)를 옮기고, 월넛(블랙월넛)을 100으로 둔 비율을 같이 보여줘요. 무게는 같은 곳의 함수율 12% 기건 밀도로 5단계(kg/m³ 기준 450 미만 1 · 550 미만 2 · 700 미만 3 · 850 미만 4 · 그 이상 5)를 나누고, 18T 1220×2440 원장 1장 무게를 밀도 × 0.0536m³로 계산했어요. 박달나무·황벽나무는 논문 값, 자작나무는 실버버치·포플러는 블랙포플러·회양목은 유럽 회양목 값, 대추나무·층층나무·보그 오크는 추정값, 대나무 패널은 제품별 범위의 중간값이에요. 합판·MDF·OSB·파티클보드 밀도는 일반 제품 기준(자작합판은 제조사 시험값 716 kg/m³)이라 제품마다 ±10% 넘게 달라요. 같은 수종도 판마다 ±10~15% 차이가 나요. 내습성은 같은 곳의 심재 썩음 저항(내후성) 평가를 5단계로 옮기고, 부피 수축률이 16% 이상인 나무는 습도에 따라 많이 움직여서 한 단계 낮췄어요. 자료가 없는 수종은 근연종 값이나 비중으로 추정했고 상세 화면에 표시했어요. 합판·MDF·OSB·파티클보드는 일반 실내용 제품 기준이라, 내수 합판·OSB/3처럼 등급이 높은 제품은 더 강해요. 내습성이 높아도 마감 없이 물에 닿게 두면 갈라지거나 변색될 수 있어요.</li>
+      <li><b>비교</b>: 비교 화면은 위와 같은 수치를 그대로 나란히 놓은 거예요. 초록 표시는 비교 중인 목재 사이에서 가장 좋은 값(단단함·강함·가벼움·물에 강함·가공 쉬움·구하기 쉬움)이고, 값이 모두 같거나 자료가 없으면 표시하지 않아요. 막대는 비교 중 가장 큰 값을 100으로 둔 비율이에요. 얀카가 없는 합판·보드류는 정렬할 때 맨 뒤로 가요. 담은 목재와 정렬 방식은 이 기기에만 저장되고, "링크 공유"로 같은 비교 화면을 다른 사람에게 보낼 수 있어요.</li>
       <li><b>수종 선정</b>: 국내 목공에서 많이 쓰는 목재 100종에, 2026.11.8 다나와(쿠팡·G마켓·11번가 등 입점 판매처)와 목재 도매상 온라인 공지를 조사해 국내 온라인에서 파는데 빠져 있던 9종을 더했어요. 같은 나무의 변형 제품(탄화목·브라운 애쉬·아키타 삼나무 등)은 따로 넣지 않았어요.</li>
       <li><b>희귀도</b>: 국내에서 구하기 쉬운 정도예요. 2026년 10월 판매처 조사 때 상시 판매 여부, 견적·소량 유통 여부, 국제 거래 규제(CITES) 대상 여부를 기준으로 5단계로 나눴어요. 시기와 지역에 따라 달라질 수 있어요.</li>
       <li><b>사진 변형</b>: 사진은 잘라내고(결이 세로인 견본 사진은 90° 돌려서) 색을 보정한 뒤 스테인 색 계산을 적용해서 보여줘요. CC BY-SA 사진을 변형한 이미지는 원본과 같은 CC BY-SA 라이선스를 따라요.</li>
@@ -733,7 +778,7 @@ function put(cv,w,h,data){cv.width=w;cv.height=h;cv.getContext('2d').putImageDat
 
 /* ---------- list view ---------- */
 const $=s=>document.querySelector(s);
-const vList=$('#vList'),vDetail=$('#vDetail'),vQuiz=$('#vQuiz');
+const vList=$('#vList'),vDetail=$('#vDetail'),vQuiz=$('#vQuiz'),vCmp=$('#vCmp');
 let query='';
 const F={g:new Set(),lv:new Set(),use:new Set(),ra:new Set(),sg:new Set(),mg:new Set(),wg:new Set()};
 const anyF=()=>F.g.size||F.lv.size||F.use.size||F.ra.size||F.sg.size||F.mg.size||F.wg.size||query;
@@ -851,9 +896,10 @@ function renderList(){
   const q=query.trim().toLowerCase();
   const idx=D.map((r,i)=>i).filter(i=>(!F.g.size||F.g.has(D[i][0]))&&(!F.lv.size||F.lv.has(String(D[i][3])))&&(!F.use.size||[...F.use].some(k=>inUse(i,k)))&&(!F.ra.size||F.ra.has(String(RA[i])))&&(!F.sg.size||F.sg.has(String(PRP[i][0])))&&(!F.mg.size||F.mg.has(String(PRP[i][1])))&&(!F.wg.size||F.wg.has(String(WG[i])))
     &&(!q||[D[i][1],D[i][2],useOf(i),D[i][5],D[i][6]].join(' ').toLowerCase().includes(q)));
+  if(SORT)idx.sort(sortFn(SORT));
   $('#count').textContent=idx.length+'종';
   $('#reset').hidden=!anyF();
-  $('#grid').innerHTML=idx.map(i=>`<button class="card" data-i="${i}" aria-label="${D[i][1]} 선택"><canvas class="board" data-i="${i}" width="300" height="138"></canvas><span class="meta"><span class="nm">${D[i][1]} <span class="ph" hidden>사진</span></span><span class="en">${D[i][2]}</span><span class="tags"><span class="lvs" aria-label="가공 난이도 ${D[i][3]}">${'★'.repeat(D[i][3])}<span class="off">${'★'.repeat(5-D[i][3])}</span></span><span class="ra r${RA[i]}">${RAN[RA[i]]}</span></span><span class="pp" aria-label="강도 ${PRP[i][0]}, 내습성 ${PRP[i][1]}, 무게 ${WG[i]}, ${jkTxt(i)}"><span>강도 ${bars(PRP[i][0],"sgb")}</span><span>내습 ${bars(PRP[i][1],"mgb")}</span><span>무게 ${bars(WG[i],"wgb")}</span><span class="jkl">얀카 경도 ${jkN(i)?'<b class="jk">'+jkN(i)+'</b> · '+(jks(i)==='est'?'≈':'')+fmt(Math.round(PRP[i][2]/4.448))+' lbf':'해당 없음'}</span></span></span></button>`).join('')
+  $('#grid').innerHTML=idx.map(i=>`<div class="cardw"><button class="card" data-i="${i}" aria-label="${D[i][1]} 선택"><canvas class="board" data-i="${i}" width="300" height="138"></canvas><span class="meta"><span class="nm">${D[i][1]} <span class="ph" hidden>사진</span></span><span class="en">${D[i][2]}</span><span class="tags"><span class="lvs" aria-label="가공 난이도 ${D[i][3]}">${'★'.repeat(D[i][3])}<span class="off">${'★'.repeat(5-D[i][3])}</span></span><span class="ra r${RA[i]}">${RAN[RA[i]]}</span></span><span class="pp" aria-label="강도 ${PRP[i][0]}, 내습성 ${PRP[i][1]}, 무게 ${WG[i]}, ${jkTxt(i)}"><span>강도 ${bars(PRP[i][0],"sgb")}</span><span>내습 ${bars(PRP[i][1],"mgb")}</span><span>무게 ${bars(WG[i],"wgb")}</span><span class="jkl">얀카 경도 ${jkN(i)?'<b class="jk">'+jkN(i)+'</b> · '+(jks(i)==='est'?'≈':'')+fmt(Math.round(PRP[i][2]/4.448))+' lbf':'해당 없음'}</span></span></span></button><button type="button" class="cmpb" data-cmp="${i}" aria-pressed="${CMP.includes(i)}" aria-label="${D[i][1]} 비교에 담기">${CMP.includes(i)?'✓ 비교':'＋ 비교'}</button></div>`).join('')
     || '<p class="count" style="grid-column:1/-1">조건에 맞는 목재가 없어요. 필터를 줄이거나 다른 말로 검색해 보세요.</p>';
   queue.length=0;
   document.querySelectorAll('#grid canvas').forEach(cv=>queue.push(cv));
@@ -863,15 +909,17 @@ document.querySelector('.filters').addEventListener('click',e=>{const b=e.target
   if(v==='all')S.clear();else if(S.has(v))S.delete(v);else S.add(v);chipsHTML();renderList();});
 $('#reset').addEventListener('click',()=>{Object.values(F).forEach(S=>S.clear());query='';$('#q').value='';chipsHTML();renderList();});
 $('#q').addEventListener('input',e=>{query=e.target.value;renderList();});
-$('#grid').addEventListener('click',e=>{const c=e.target.closest('.card');if(c)openDetail(+c.dataset.i);});
+$('#grid').addEventListener('click',e=>{const m=e.target.closest('.cmpb');if(m){cmpToggle(+m.dataset.cmp);return;}const c=e.target.closest('.card');if(c){detFromCmp=false;openDetail(+c.dataset.i);}});
 
 /* ---------- views ---------- */
 let listY=0;
 function show(v,toTop){
   if(!vList.hidden&&v!==vList)listY=window.scrollY;
-  [vList,vDetail,vQuiz].forEach(x=>x.hidden=x!==v);
+  [vList,vDetail,vQuiz,vCmp].forEach(x=>x.hidden=x!==v);
+  if(v!==vCmp&&/^#cmp=/.test(location.hash))try{history.replaceState(null,'',location.pathname+location.search);}catch(e){}
   $('#bar').hidden=v===vList; $('#top').hidden=v!==vList;
-  $('#crumb').textContent=v===vDetail?D[+vDetail.dataset.i][1]:v===vQuiz?quizCrumb():'';
+  $('#crumb').textContent=v===vDetail?D[+vDetail.dataset.i][1]:v===vQuiz?quizCrumb():v===vCmp?`목재 비교 (${CMP.length}종)`:'';
+  cmpSync();
   window.scrollTo(0,v===vList&&!toTop?listY:0);
 }
 function ptab(i){
@@ -896,6 +944,7 @@ function openDetail(i){
     </div>
     <div class="facts">
       <div><span class="label">${G[g]}</span><h2>${nm}</h2><div class="en">${en}</div></div>
+      <button type="button" class="dcmp" data-dcmp="${i}" aria-pressed="${CMP.includes(i)}">${CMP.includes(i)?'✓ 비교함에 담김':'＋ 비교에 담기'}</button>
       <div class="lv"><span class="stars">${stars(lv)}</span><span>가공 난이도 ${lv}/5 · ${LV[lv]}</span></div>
       <div class="lv"><span class="rad">${'◆'.repeat(RA[i])}<span class="off">${'◆'.repeat(5-RA[i])}</span></span><span>희귀도 ${RA[i]}/5 · ${RAN[RA[i]]} <small class="rdesc">(${RAD[RA[i]]})</small></span></div>
       ${(()=>{const [sg,mg,jn,mor,vol,rot,src]=PRP[i];const [dn,moe,cr,ps]=PHY[i];const note=src.startsWith('rel:')?' · 근연종 '+src.slice(4)+' 자료':src==='est'?' · 자료 부족, 비중 기준 추정':src==='panel'?' · 판재 일반값 (제품·접착제 등급에 따라 다름)':'';
@@ -960,13 +1009,132 @@ async function renderFinish(i,type){
 }
 document.addEventListener('click',e=>{
   const b=e.target.closest('[data-act],[data-type]');if(!b)return;
-  if(b.dataset.act==='home'){Q.fromRes=false;show(vList,true);return;}
+  if(b.dataset.act==='home'){Q.fromRes=false;detFromCmp=false;show(vList,true);return;}
   if(b.dataset.act==='back'){
+    if(!vCmp.hidden){if(cmpFrom!=null)openDetail(cmpFrom);else show(vList);return;}
+    if(!vDetail.hidden&&detFromCmp){detFromCmp=false;openCmp();return;}
     if(!vQuiz.hidden){quizBack();return;}
     if(!vDetail.hidden&&Q.fromRes){Q.fromRes=false;quizResult();return;}
     show(vList);return;}
   if(b.dataset.type){renderFinish(+vDetail.dataset.i,b.dataset.type);}
 });
+
+/* ---------- compare: up to 3 woods side by side ---------- */
+const CMAX=3;let CMP=[],cmpFrom=null,detFromCmp=false,SORT='';
+const lsGet=k=>{try{return localStorage.getItem(k);}catch(e){return null;}};
+const lsSet=(k,v)=>{try{localStorage.setItem(k,v);}catch(e){}};
+const byName=n=>D.findIndex(r=>r[1]===n);
+try{CMP=(JSON.parse(lsGet('wcmp')||'[]')||[]).map(byName).filter(i=>i>=0).slice(0,CMAX);}catch(e){CMP=[];}
+SORT=lsGet('wsort')||'';
+function toast(t){const el=$('#toast');el.textContent=t;el.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>el.hidden=true,2600);}
+function cmpSave(){lsSet('wcmp',JSON.stringify(CMP.map(i=>D[i][1])));}
+function cmpToggle(i){const k=CMP.indexOf(i);
+  if(k>=0)CMP.splice(k,1);
+  else{if(CMP.length>=CMAX){toast(`비교는 최대 ${CMAX}종까지예요. 아래 비교함에서 하나를 빼고 담아주세요.`);return;}CMP.push(i);
+    if(CMP.length===1)toast('비교함에 담았어요. 1~2종 더 담고 "비교하기"를 누르세요.');}
+  cmpSave();cmpSync();if(!vCmp.hidden)renderCmp();}
+function cmpSync(){
+  document.querySelectorAll('.cmpb').forEach(b=>{const on=CMP.includes(+b.dataset.cmp);b.setAttribute('aria-pressed',on);b.textContent=on?'✓ 비교':'＋ 비교';});
+  document.querySelectorAll('.dcmp').forEach(b=>{const on=CMP.includes(+b.dataset.dcmp);b.setAttribute('aria-pressed',on);b.textContent=on?'✓ 비교함에 담김':'＋ 비교에 담기';});
+  const vis=CMP.length>0&&(!vList.hidden||!vDetail.hidden);
+  $('#cmpBar').hidden=!vis;document.body.classList.toggle('hascmp',vis);
+  $('#cmpList').innerHTML=CMP.map(i=>`<span class="ci">${esc(D[i][1])}<button type="button" data-rm="${i}" aria-label="${esc(D[i][1])} 빼기">×</button></span>`).join('');
+  const go=$('#cmpGo');go.disabled=CMP.length<2;go.textContent=CMP.length<2?'1종 더 담기':`비교하기 (${CMP.length})`;
+  if(!vCmp.hidden)$('#crumb').textContent=`목재 비교 (${CMP.length}종)`;
+}
+$('#cmpList').addEventListener('click',e=>{const b=e.target.closest('[data-rm]');if(b)cmpToggle(+b.dataset.rm);});
+$('#cmpGo').addEventListener('click',()=>{if(CMP.length>=2)openCmp(true);});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-dcmp]');if(b)cmpToggle(+b.dataset.dcmp);});
+function openCmp(remember){
+  if(remember)cmpFrom=!vDetail.hidden?+vDetail.dataset.i:null;
+  renderCmp();show(vCmp,true);
+  if(CMP.length)try{history.replaceState(null,'','#cmp='+encodeURIComponent(CMP.map(i=>D[i][1]).join(',')));}catch(e){}
+}
+/* sort the list: woods without a value go last */
+function sortFn(k){
+  const key={jk:i=>PRP[i][2]||null,wg:i=>PHY[i][0]||null,mg:i=>PRP[i][1],lv:i=>D[i][3],ra:i=>RA[i]}[k.slice(0,2)];
+  if(k==='nm')return (a,b)=>D[a][1].localeCompare(D[b][1],'ko');
+  const dir=k.endsWith('-')?-1:1;
+  return (a,b)=>{const x=key(a),y=key(b);if(x==null&&y==null)return 0;if(x==null)return 1;if(y==null)return -1;return (x-y)*dir;};
+}
+$('#sort').value=SORT;
+$('#sort').addEventListener('change',e=>{SORT=e.target.value;lsSet('wsort',SORT);renderList();});
+/* compare rows: v = number for ranking (null = no data), best = which end wins */
+const CROWS=[
+  {l:'얀카 경도 · 찍힘에 버티는 힘',v:i=>PRP[i][2]||null,best:'max',tag:'가장 단단함',bar:1,
+   f:i=>{const j=PRP[i][2];if(!j)return `<small>${jks(i)==='na'?'해당 없음 (판재)':'자료 없음'}</small>`;const e=jks(i)==='est'?'≈':'';return `${bars(PRP[i][0],'sgb')} ${SGN[PRP[i][0]]}<br><b>${e}${fmt(j)} N</b> <small>${e}${fmt(Math.round(j/4.448))} lbf</small>`;}},
+  {l:'휨강도 · 부러질 때까지 버티는 힘',v:i=>PRP[i][3]||null,best:'max',tag:'가장 강함',bar:1,f:i=>PRP[i][3]?`<b>${PRP[i][3]}</b> MPa`:'<small>자료 없음</small>'},
+  {l:'강성 · 하중에 덜 처지는 정도',v:i=>PHY[i][1]||null,best:'max',tag:'가장 덜 휨',bar:1,f:i=>PHY[i][1]?`<b>${PHY[i][1]}</b> GPa`:'<small>자료 없음</small>'},
+  {l:'압축강도 · 결 방향으로 누를 때',v:i=>PHY[i][2]||null,best:'max',tag:'가장 강함',bar:1,f:i=>PHY[i][2]?`<b>${PHY[i][2]}</b> MPa`:'<small>자료 없음</small>'},
+  {l:'무게 · 18T 1220×2440 원장 1장',v:i=>PHY[i][0]||null,best:'min',tag:'가장 가벼움',bar:1,f:i=>`${bars(WG[i],'wgb')} ${WGN[WG[i]]}<br><b>${(PHY[i][0]*SHEET).toFixed(1)} kg</b> <small>${fmt(PHY[i][0])} kg/m³</small>`},
+  {l:'내습성 · 썩음·습기',v:i=>PRP[i][1],best:'max',tag:'물에 가장 강함',f:i=>`${bars(PRP[i][1],'mgb')} ${MGN[PRP[i][1]]}<br><small>${ROTN[PRP[i][5]]}${PRP[i][4]?' · 수축률 '+PRP[i][4]+'%':''}</small>`},
+  {l:'가공 난이도',v:i=>D[i][3],best:'min',tag:'가장 쉬움',f:i=>`<span class="stars">${stars(D[i][3])}</span><br>${LV[D[i][3]]}`},
+  {l:'희귀도 · 구하기',v:i=>RA[i],best:'min',tag:'가장 구하기 쉬움',f:i=>`<span class="rad">${'◆'.repeat(RA[i])}<span class="off">${'◆'.repeat(5-RA[i])}</span></span><br>${RAN[RA[i]]}`},
+  {l:'가격대',f:i=>esc(D[i][4])},
+  {l:'색',f:i=>esc(D[i][5])},
+  {l:'특징',f:i=>esc(D[i][6])},
+  {l:'장점',f:i=>esc(D[i][7])},
+  {l:'단점',f:i=>esc(D[i][8])},
+  {l:'주요 사용처',f:i=>esc(USE[D[i][1]]||'-')},
+  {l:'가공·도장 주의',f:i=>esc(D[i][9])}];
+const CST={type:'oil',j:-2};
+function renderCmp(){
+  const n=CMP.length;
+  if(n<2){vCmp.innerHTML=`<div class="cmp"><div><span class="label">목재 비교</span><h2>비교할 목재를 2~3종 담아주세요</h2></div><p>목록 카드나 상세 화면의 <b>＋ 비교</b> 버튼을 누르면 비교함에 담겨요. 지금 담긴 목재: ${n?esc(D[CMP[0]][1]):'없음'}</p><div class="tbtns"><button type="button" data-act="home">목록으로</button></div></div>`;return;}
+  const gc=`grid-template-columns:repeat(${n},minmax(0,1fr))`;
+  const rows=CROWS.map(r=>{
+    let tags={},vals=null;
+    if(r.v){vals=CMP.map(r.v);const nums=vals.filter(x=>x!=null);
+      if(nums.length>=2&&Math.max(...nums)!==Math.min(...nums)){const tgt=r.best==='max'?Math.max(...nums):Math.min(...nums);vals.forEach((x,k)=>{if(x===tgt)tags[k]=1;});}}
+    const mx=vals?Math.max(...vals.filter(x=>x!=null),0):0;
+    return `<div class="crow"><div class="rl">${r.l}</div><div class="rv" style="${gc}">${CMP.map((i,k)=>`<div class="cv">${r.f(i)}${r.bar&&vals&&vals[k]!=null&&mx?`<span class="cbar"><i style="width:${Math.round(vals[k]/mx*100)}%"></i></span>`:''}${tags[k]?`<span class="best">${r.tag}</span>`:''}</div>`).join('')}</div></div>`;}).join('');
+  const T=CST.type;if(CST.j===-2){const w=FIN[T].findIndex(f=>/Special Walnut/i.test(f.en));CST.j=w>=0?w:0;}
+  vCmp.innerHTML=`<div class="cmp">
+    <div class="ctop"><div><span class="label">목재 비교</span><h2>${CMP.map(i=>esc(D[i][1])).join(' · ')}</h2></div>
+      <div class="tbtns"><button type="button" id="cmpShare">링크 공유</button><button type="button" id="cmpClear">비우기</button></div></div>
+    <div class="cmpcols" style="${gc}">${CMP.map(i=>`<div class="cmpcol"><canvas class="board" data-cb="${i}"></canvas><b>${esc(D[i][1])}</b><span class="en">${esc(D[i][2])}</span>
+      <div class="acts"><button type="button" data-cdet="${i}">상세</button><button type="button" data-crm="${i}">빼기</button></div></div>`).join('')}</div>
+    <section class="cstn" aria-labelledby="cstnH">
+      <div class="rhead"><div><span class="label">같은 스테인 동시 비교</span><h3 id="cstnH" style="margin:2px 0 0"></h3></div>
+        <div class="seg" id="cseg" role="group" aria-label="스테인 종류">${['water','oil'].map(k=>`<button type="button" data-ct="${k}" aria-pressed="${k===T}">${TYPE[k].ko} <small>${FIN[k].length}색</small></button>`).join('')}</div></div>
+      <div class="fins" id="cfins" role="group" aria-label="스테인 색"></div>
+      <div class="cmpcols" style="${gc}">${CMP.map(i=>`<div class="cmpcol"><canvas class="board" data-cs="${i}"></canvas><span class="hx" data-chx="${i}"></span></div>`).join('')}</div>
+      <p class="typedesc" style="margin:0">고른 스테인을 비교 중인 목재에 똑같이 칠한 계산 색이에요. 나무마다 흡수 정도가 달라서 같은 색도 다르게 먹어요.</p>
+    </section>
+    <div><span class="label">수치 비교</span><p class="typedesc" style="margin:2px 0 8px">초록 표시는 비교 중인 목재 중 가장 좋은 값이에요. 막대는 비교 중인 목재 중 가장 큰 값을 꽉 찬 막대로 둔 비율이에요. 흠 없는 작은 원목 시편 기준이라 집성목·합판은 다를 수 있어요.</p>
+    <div class="ctab">${rows}</div></div>
+  </div>`;
+  vCmp.querySelectorAll('canvas[data-cb]').forEach(cv=>{const i=+cv.dataset.cb;base(i,1.25,false).then(raw=>{if(cv.isConnected)put(cv,raw.w,raw.h,raw.d.slice());});});
+  renderCmpStain();
+}
+function renderCmpStain(){
+  const T=CST.type;if(CST.j>=FIN[T].length)CST.j=0;
+  vCmp.querySelectorAll('#cseg button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.ct===T));
+  $('#cfins').innerHTML=`<button type="button" data-cj="-1" aria-pressed="${CST.j===-1}"><i style="background:linear-gradient(135deg,#E8D2AE,#B88A5A)"></i>무도장</button>`+FIN[T].map((f,j)=>`<button type="button" data-cj="${j}" aria-pressed="${CST.j===j}"><i style="background:${f.sw}"></i>${f.ko}</button>`).join('');
+  const f=CST.j>=0?FIN[T][CST.j]:null;
+  $('#cstnH').textContent=f?`${TYPE[T].ko} · ${f.ko} (${f.code})`:'원색상 (무도장)';
+  const sel=$('#cfins').querySelector('[aria-pressed="true"]');if(sel)sel.scrollIntoView({block:'nearest',inline:'center'});
+  const tok=(renderCmpStain.tok=(renderCmpStain.tok||0)+1);
+  vCmp.querySelectorAll('canvas[data-cs]').forEach(cv=>{const i=+cv.dataset.cs;
+    base(i,1.25,false).then(raw=>{if(tok!==renderCmpStain.tok||!cv.isConnected)return;
+      const od=f?apply(raw,f,i,T):raw.d.slice();put(cv,raw.w,raw.h,od);
+      const hx=vCmp.querySelector(`[data-chx="${i}"]`);if(hx)hx.textContent=D[i][1]+' '+hex((f?od.mean:meanLin(raw.d)).map(enc));});});
+}
+vCmp.addEventListener('click',e=>{
+  const t=e.target.closest('[data-ct]');if(t){CST.type=t.dataset.ct;renderCmpStain();return;}
+  const c=e.target.closest('[data-cj]');if(c){CST.j=+c.dataset.cj;renderCmpStain();return;}
+  const d=e.target.closest('[data-cdet]');if(d){detFromCmp=true;openDetail(+d.dataset.cdet);return;}
+  const r=e.target.closest('[data-crm]');if(r){cmpToggle(+r.dataset.crm);if(CMP.length)openCmp();return;}
+  if(e.target.closest('#cmpClear')){CMP=[];cmpSave();renderCmp();cmpSync();return;}
+  if(e.target.closest('#cmpShare')){const url=location.origin+location.pathname+'#cmp='+encodeURIComponent(CMP.map(i=>D[i][1]).join(','));
+    const t='목재 비교: '+CMP.map(i=>D[i][1]).join(' · ');
+    if(navigator.share){navigator.share({title:t,url}).catch(()=>{});return;}
+    (navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(()=>toast('비교 링크를 복사했어요.'),()=>toast(url));}
+});
+/* shared link: #cmp=월넛,화이트오크 */
+(()=>{const m=location.hash.match(/^#cmp=(.+)$/);if(!m)return;let names=[];try{names=decodeURIComponent(m[1]).split(',');}catch(e){}
+  const ix=names.map(byName).filter(i=>i>=0).slice(0,CMAX);if(ix.length>=2){CMP=ix;cmpSave();cmpFrom=null;openCmp();}})();
+cmpSync();
 
 /* ---------- quiz: guess the species from its grain ---------- */
 const Q={items:[],k:0,view:'q',fromRes:false};
@@ -1064,7 +1232,7 @@ vQuiz.addEventListener('click',e=>{
     if(it.hints===3)it.gone=pickN(it.opts,2,[it.i]);quizShow(Q.k);return;}
   if(e.target.closest('#qNext')){quizNext();return;}
   if(e.target.closest('#qAgain')){quizNew();return;}
-  const li=e.target.closest('[data-qi]');if(li){Q.fromRes=true;openDetail(+li.dataset.qi);}
+  const li=e.target.closest('[data-qi]');if(li){Q.fromRes=true;detFromCmp=false;openDetail(+li.dataset.qi);}
 });
 document.addEventListener('keydown',e=>{
   if(vQuiz.hidden||Q.view!=='q'||e.altKey||e.ctrlKey||e.metaKey)return;
